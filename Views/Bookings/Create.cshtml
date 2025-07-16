@@ -3,6 +3,8 @@
     ViewData["Title"] = "Book a Resource";
 }
 
+
+
 <h2>@ViewData["Title"]</h2>
 
 <form asp-action="Create" method="post">
@@ -12,11 +14,98 @@
             <option value="">-- Select --</option>
             @foreach (var res in ViewBag.Resources)
             {
-                <option value="@res.Id">@res.Name</option>
+            <option value="@res.Id">@res.Name</option>
             }
         </select>
     </div>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            padding: 2rem;
+        }
 
+        h2 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            transition: border-color 0.3s ease;
+        }
+
+            .form-control:focus {
+                border-color: #4CAF50;
+                outline: none;
+                box-shadow: 0 0 6px rgba(76, 175, 80, 0.3);
+            }
+
+        input[type="checkbox"].form-control {
+            width: auto;
+            margin-top: 6px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+
+            .btn-primary:hover {
+                background-color: #43a047;
+            }
+
+        .btn-secondary {
+            background-color: #9e9e9e;
+            color: white;
+            border: none;
+        }
+
+            .btn-secondary:hover {
+                background-color: #757575;
+            }
+
+        .text-danger {
+            color: #e53935;
+            font-size: 0.9rem;
+        }
+    </style>
     <div class="form-group">
         <label>Start Time</label>
         <input asp-for="StartTime" class="form-control" type="datetime-local" required />
@@ -41,5 +130,5 @@
         @Html.ValidationSummary(true)
     </div>
 
-    <button type="submit" class="btn btn-primary mt-3">Book</button>
+    <button type="submit" class="btn btn-primary">Book</button>
 </form>

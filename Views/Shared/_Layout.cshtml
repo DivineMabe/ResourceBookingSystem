@@ -6,52 +6,123 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ResourceBookingSystem</title>
+    <title>@ViewData["Title"] - Resource Booking System</title>
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+    <style>
+        body {
+            background-color: #f5f7fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 240px;
+            height: 100vh;
+            background-color: #2E86C1;
+            padding: 1rem;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+        }
+
+            .sidebar .logo {
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin-bottom: 2rem;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #fff;
+            }
+
+                .sidebar .logo i {
+                    color: #f7dc6f;
+                }
+
+            .sidebar nav a {
+                color: white;
+                text-decoration: none;
+                margin-bottom: 1rem;
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                transition: background 0.3s;
+                padding: 0.5rem 1rem;
+                border-radius: 6px;
+            }
+
+                .sidebar nav a:hover,
+                .sidebar nav a.active {
+                    background-color: #1B4F72;
+                }
+
+        .main-content {
+            margin-left: 240px;
+            padding: 2rem;
+        }
+
+        .footer {
+            background-color: #e9ecef;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+
+        @@media (max-width: 768px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 1rem;
+            }
+
+                .sidebar nav {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1rem;
+                }
+
+            .main-content {
+                margin-left: 0;
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Resource Booking</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-                        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fas fa-calendar-check"></i> Resource Booking
+        </div>
+        <nav>
+            <a asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Home</a>
+            <a asp-controller="Resources" asp-action="Index"><i class="fas fa-boxes"></i> Resources</a>
+            <a asp-controller="Bookings" asp-action="Index"><i class="fas fa-list"></i> Bookings</a>
 
-                <div class="collapse navbar-collapse" id="mainNavbar">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Resources" asp-action="Index">Resources</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Bookings" asp-action="Index">Bookings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Bookings" asp-action="Create">Book a Resource</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </nav>
-    </header>
+    </div>
 
-    <div class="container mt-4">
+    <div class="main-content">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div>
 
-    <footer class="footer border-top text-muted mt-4">
-        <div class="container">
-            &copy; @DateTime.Now.Year - ResourceBookingSystem - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+        <footer class="footer border-top text-muted mt-4">
+            &copy; @DateTime.Now.Year - Resource Booking System - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </footer>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

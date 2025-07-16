@@ -2,7 +2,59 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    .welcome-wrapper {
+        max-width: 900px;
+        margin: 3rem auto;
+        padding: 2rem;
+        background-color: #f8f9fc;
+        border-radius: 12px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        text-align: center;
+        border-left: 6px solid #2E86C1;
+    }
+
+        .welcome-wrapper h1 {
+            color: #2E86C1;
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .welcome-wrapper p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .welcome-wrapper a {
+            color: #2E86C1;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px dotted #2E86C1;
+        }
+
+            .welcome-wrapper a:hover {
+                color: #1b4f72;
+                text-decoration: underline;
+            }
+
+    @@media (max-width: 768px) {
+        .welcome-wrapper {
+            padding: 1.5rem;
+        }
+
+            .welcome-wrapper h1 {
+                font-size: 2rem;
+            }
+
+            .welcome-wrapper p {
+                font-size: 1rem;
+            }
+    }
+</style>
+
+<div class="welcome-wrapper">
+    <h1>Welcome to the Resource Booking System</h1>
+
 </div>

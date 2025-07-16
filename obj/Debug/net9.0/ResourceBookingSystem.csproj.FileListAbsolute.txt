@@ -460,3 +460,4 @@ C:\Users\rapha\Downloads\ResourceBookingSystem\ResourceBookingSystem\obj\Debug\n
 C:\Users\rapha\Downloads\ResourceBookingSystem\ResourceBookingSystem\obj\Debug\net9.0\ResourceBookingSystem.pdb
 C:\Users\rapha\Downloads\ResourceBookingSystem\ResourceBookingSystem\obj\Debug\net9.0\ResourceBookingSystem.genruntimeconfig.cache
 C:\Users\rapha\Downloads\ResourceBookingSystem\ResourceBookingSystem\obj\Debug\net9.0\ref\ResourceBookingSystem.dll
+C:\Users\rapha\Downloads\ResourceBookingSystem\ResourceBookingSystem\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
