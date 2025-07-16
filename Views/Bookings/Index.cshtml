@@ -1,0 +1,36 @@
+@model List<ResourceBookingSystem.Models.Booking>
+
+    @{
+    ViewData["Title"] = "All Bookings";
+    }
+
+    <h2>All Bookings</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Resource</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Booked By</th>
+                <th>Purpose</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var booking in Model)
+        {
+            <tr>
+                <td>@booking.Resource?.Name</td>
+                <td>@booking.StartTime.ToString("g")</td>
+                <td>@booking.EndTime.ToString("g")</td>
+                <td>@booking.BookedBy</td>
+                <td>@booking.Purpose</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@booking.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@booking.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>

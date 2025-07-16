@@ -1,0 +1,40 @@
+@model IEnumerable<ResourceBookingSystem.Models.Resource>
+
+    @{
+    ViewData["Title"] = "Resources";
+    }
+
+    <h2>Resources</h2>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Add New Resource</a>
+    </p>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Capacity</th>
+                <th>Available</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var resource in Model)
+        {
+            <tr>
+                <td>@resource.Name</td>
+                <td>@resource.Description</td>
+                <td>@resource.Location</td>
+                <td>@resource.Capacity</td>
+                <td>@(resource.IsAvailable ? "Yes" : "No")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@resource.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@resource.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>

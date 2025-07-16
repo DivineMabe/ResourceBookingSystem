@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Models",
+    "\\Properties",
+    "\\Views",
+    "\\Views\\Bookings",
+    "\\Views\\Home",
+    "\\Views\\Resources",
+    "\\Views\\Shared",
+    "\\wwwroot",
+    "\\wwwroot\\css"
+  ],
+  "SelectedNode": "\\Data\\ApplicationDbContext.cs",
+  "PreviewInSolutionExplorer": false
+}
